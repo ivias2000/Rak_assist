@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: "Vazir-Thin";
+            src: url("../fonts/Vazir-Font/Vazir-Thin.woff") format("woff");
+        }
+        @font-face{
+            font-family: "Vazir-Bold";
+            src: url("../fonts/Vazir-Font/Vazir-Bold.woff") format("woff");
+        }
+          
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        :root{
+            --rareclr: #a3a101;
+            --primary: #393738;
+            --bgclr: #000000;
+            --textclr: #ffffff;
+            --xxxfont: 25px , 1.2vw + 25px , 60px;
+            --xxfont: 20px , 0.7vw + 20px , 45px;
+            --xfont: 18px, 0.5vw + 15px, 30px;
+            --font: 10px, 0.4vw + 12px, 25px;
+            --sfont: 7px, 0.3vw + 10px, 20px;
+            --ssfont: 5px , 0.2vw + 7px , 15px;
+            --sssfont: 3px , 0.15vw + 5px , 10px
+        }
+        body{
+            background-color: black;
+            width: 100%;
+        }
+        main{
+            width: 90%;
+            margin-inline: 5%;
+            margin-block: 10%;
+            display: flex;
+            align-items: flex-start;
+            direction: rtl;
+            flex-wrap: wrap;
+            
+        }
+        .headings{
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .headings h1{
+            color: var(--textclr);
+            font-size: clamp(var(--xxxfont));
+            font-family: "Vazir-Bold";
+        }
+        .headings h2{
+            color: var(--textclr);
+            font-size: clamp(var(--xxfont));
+            opacity: 0.9;
+            font-family: "Vazir-Bold";
+        }
+        .headings h3{
+            color: var(--textclr);
+            font-size: clamp(var(--xfont));
+            opacity: 0.8;
+            font-family: "Vazir-Bold";
+        }
+        .headings h4{
+            color: var(--textclr);
+            font-size: clamp(var(--font));
+            opacity: 0.7;
+            font-family: "Vazir-Bold";
+        }
+        .headings h5{
+            color: var(--textclr);
+            font-size: clamp(var(--sfont));
+            opacity: 0.6;
+            font-family: "Vazir-Bold";
+        }
+        .headings h6{
+            color: var(--textclr);
+            font-size: clamp(var(--ssfont));
+            opacity: 0.5;
+            font-family: "Vazir-Bold";
+        }
+        .headings p{
+            color: var(--textclr);
+            font-size: clamp(var(--font));
+            opacity: 0.8;
+            line-height: 26px;
+            font-family: "Vazir-Thin";
+        }
+        .colors{
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        .colors span{
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+        }
+        .colors span:nth-child(1){
+            background-color: var(--textclr);
+        }
+        .colors span:nth-child(2){
+            background-color: var(--bgclr);
+            border: 2px solid var(--textclr);
+        }
+        .colors span:nth-child(3){
+            background-color: var(--rareclr);
+        }
+        .colors span:nth-child(4){
+            background-color: var(--primary);
+            border: 2px solid var(--textclr);
+        }
+        .colors span:nth-child(5){
+            background: linear-gradient(45deg , var(--rareclr) , color-mix(in srgb, var(--rareclr) 30%, var(--bgclr) 70%));
+            border: 2px solid var(--textclr);
+        }
+        .colors span:nth-child(6){
+            background: linear-gradient(45deg , var(--primary) , var(--bgclr));
+            border: 2px solid var(--textclr);
+        }
+        .buttons{
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+        }
+        .buttons a{
+            text-decoration: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            padding: 10px 24px;
+            font-size: clamp(var(--font));
+            font-family: "Vazir-Bold";
+        }
+        .buttons a:nth-child(1){
+            background-color: var(--rareclr);
+            color: var(--bgclr);
+        }
+        .buttons a:nth-child(2){
+            background-color: var(--primary);
+            color: var(--textclr);
+            border: 2px solid var(--textclr);
+        }
+        .buttons a:nth-child(3){
+            background-color: var(--bgclr);
+            color: var(--textclr);
+            border: 2px solid var(--textclr);
+        }
+        .buttons a:nth-child(4){
+            background-color: var(--textclr);
+            color: var(--bgclr);
+            border: 2px solid var(--bgclr);
+        }
+        .buttons a:nth-child(5){
+            background-color: var(--bgclr);
+            color: var(--rareclr);
+            border: 2px solid var(--rareclr);
+        }
+        .others{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 40px;
+            margin-top: 80px;
+        }
+        .card{
+            width: 230px;
+            background-color: var(--textclr);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .card-image-container{
+            width: 100%;
+        }
+        .card-image-container img{
+            width: 100%;
+            display: inline;
+            border-radius: 10px;
+        }
+        .card-text-container{
+            width: 100%;
+        }
+        .card-text-container h3{
+            color: var(--bgclr);
+            font-size: clamp(var(--sfont));
+            opacity:1;
+            font-family: "Vazir-Bold";
+            margin-top: 10px;
+        }
+        .card-price-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-old-price-container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        .card-old-price-container strong{
+            color: var(--bgclr);
+            opacity: 0.5;
+            font-size: clamp(var(--sfont));
+            font-family: "Vazir-Thin";
+            text-decoration: line-through;
+        }
+        .card-old-price-container p{
+            color: var(--textclr);
+            background-color: var(--primary);
+            opacity: 0.5;
+            font-size: clamp(var(--ssfont));
+            font-family: "Vazir-Thin";
+            padding-block: 5px;
+            padding-inline: 7px;
+            border-radius: 5px;
+        }
+        .card-new-price-container{
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+        .card-new-price-container strong{
+            color: var(--rareclr);
+            opacity: 1;
+            font-size: clamp(var(--xfont));
+            font-family: "Vazir-Bold";
+        }
+        .card-new-price-container p{
+            color: var(--rareclr);
+            opacity: 1;
+            font-size: clamp(var(--ssfont));
+            font-family: "Vazir-Thin";
+        }
+    </style>
+    <main>
+        <div class="headings">
+            <h1>فروشگاه راکوتز</h1>
+            <h2>فروشگاه راکوتز</h2>
+            <h3>فروشگاه راکوتز</h3>
+            <h4>فروشگاه راکوتز</h4>
+            <h5>فروشگاه راکوتز</h5>
+            <h6>فروشگاه راکوتز</h6>
+            <!-- <p>به دنیای سایلنت دیسکو خوش آمدید! تصور کنید در جمع دوستان یا مهمانی، هر کس هدفون خودش را به گوش زده و همه با هم به آهنگ‌های یکسان و هماهنگ گوش می‌دهند؛ همه در یک حال و هوا اما بدون نیاز به صدای بلند اسپیکرها! این ایده سایلنت دیسکو است. اینجا، شما می‌توانید به سادگی یک پلی‌لیست بسازید، آن را به سایلنت دیسکو تبدیل کنید و با هر کسی که می‌خواهید به اشتراک بگذارید. همه به راحتی می‌توانند به جمع شما بپیوندند و آهنگ‌ها را همزمان بشنوند.</p> -->
+        </div>
+        <div class="colors">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <!-- <span></span>
+            <span></span> -->
+        </div>
+        <div class="buttons">
+            <a href="">شروع کنید</a>
+            <a href="">عضو شوید</a>
+            <a href="">تماس بگیرید</a>
+            <a href="">شروع کنید</a>
+            <a href="">عضو شوید</a>
+        </div>
+        <div class="others">
+            <a class="card">
+                <span class="card-image-container">
+                    <img src="../images/product.jpg" alt="product-image">
+                </span>
+                <span class="card-text-container">
+                    <h3>نام محصول فروشگاه راکوتز</h3>
+                </span>
+                <span class="card-price-container">
+                    <div class="card-old-price-container">
+                        <strong>800,000</strong>
+                        <p>21% تخفیف</p>
+                    </div>
+                    <div class="card-new-price-container">
+                        <strong>650,000</strong>
+                        <p>تومان</p>
+                    </div>
+                </span>
+            </a>
+            <a class="card">
+                <span class="card-image-container">
+                    <img src="../images/product.jpg" alt="product-image">
+                </span>
+                <span class="card-text-container">
+                    <h3>نام محصول فروشگاه راکوتز</h3>
+                </span>
+                <span class="card-price-container">
+                    <div class="card-old-price-container">
+                        <strong>800,000</strong>
+                        <p>21% تخفیف</p>
+                    </div>
+                    <div class="card-new-price-container">
+                        <strong style="color: var(--bgclr);">650,000</strong>
+                        <p style="color: var(--bgclr);">تومان</p>
+                    </div>
+                </span>
+            </a>
+            <a class="card">
+                <span class="card-image-container">
+                    <img src="../images/product.jpg" alt="product-image">
+                </span>
+                <span class="card-text-container">
+                    <h3>نام محصول فروشگاه راکوتز</h3>
+                </span>
+                <span class="card-price-container">
+                    <div class="card-old-price-container">
+                        <strong>800,000</strong>
+                        <p style="background-color: #a3a101;opacity:1">21% تخفیف</p>
+                    </div>
+                    <div class="card-new-price-container">
+                        <strong style="color: var(--bgclr);">650,000</strong>
+                        <p style="color: var(--bgclr);">تومان</p>
+                    </div>
+                </span>
+            </a>
+            <a class="card" style="background-color: #000000;">
+                <span class="card-image-container">
+                    <img src="../images/product.jpg" alt="product-image">
+                </span>
+                <span class="card-text-container">
+                    <h3 style="color:var(--textclr)">نام محصول فروشگاه راکوتز</h3>
+                </span>
+                <span class="card-price-container">
+                    <div class="card-old-price-container">
+                        <strong style="color: var(--textclr);">800,000</strong>
+                        <p>21% تخفیف</p>
+                    </div>
+                    <div class="card-new-price-container">
+                        <strong style="color: var(--textclr);">650,000</strong>
+                        <p style="color: var(--textclr);">تومان</p>
+                    </div>
+                </span>
+            </a>
+            <a class="card" style="background-color: #000000;border:2px solid var(--textclr)">
+                <span class="card-image-container">
+                    <img src="../images/product.jpg" alt="product-image">
+                </span>
+                <span class="card-text-container">
+                    <h3 style="color:var(--textclr)">نام محصول فروشگاه راکوتز</h3>
+                </span>
+                <span class="card-price-container">
+                    <div class="card-old-price-container">
+                        <strong style="color: var(--textclr);">800,000</strong>
+                        <p>21% تخفیف</p>
+                    </div>
+                    <div class="card-new-price-container">
+                        <strong style="color: var(--textclr);">650,000</strong>
+                        <p style="color: var(--textclr);">تومان</p>
+                    </div>
+                </span>
+            </a>
+        </div>
+    </main>
+    <script>
+        function convertToPersianNumbers() {
+            const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+            
+            const elements = document.querySelectorAll('.card-old-price-container strong, .card-new-price-container strong, .card-old-price-container p');
+            
+            elements.forEach(element => {
+                element.textContent = element.textContent.replace(/\d/g, digit => persianDigits[digit]);
+            });
+        }
+        
+        // Add this before closing body tag
+        document.addEventListener('DOMContentLoaded', convertToPersianNumbers);
+        
+    </script>
+    
+</body>
+</html>
