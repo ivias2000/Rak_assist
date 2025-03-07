@@ -115,7 +115,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
 }
 .hero-section-text{
     direction: rtl;
@@ -356,6 +356,7 @@ nav{
     width: 100%;
 }
 .card-text-container h3{
+    direction: rtl;
     color: var(--bgclr);
     font-size: clamp(var(--sfont));
     opacity:1;
@@ -382,9 +383,9 @@ nav{
     text-decoration: line-through;
 }
 .card-old-price-container p{
-    color: var(--textclr);
-    background-color: var(--primary);
-    opacity: 0.5;
+    color: var(--bgclr);
+    background-color: var(--rareclr);
+    opacity: 1;
     font-size: clamp(var(--ssfont));
     font-family: "Vazir-Thin";
     padding-block: 5px;
@@ -399,13 +400,13 @@ nav{
     gap: 2px;
 }
 .card-new-price-container strong{
-    color: var(--rareclr);
+    color: var(--bgclr);
     opacity: 1;
     font-size: clamp(var(--xfont));
     font-family: "Vazir-Bold";
 }
 .card-new-price-container p{
-    color: var(--rareclr);
+    color: var(--bgclr);
     opacity: 1;
     font-size: clamp(var(--ssfont));
     font-family: "Vazir-Thin";
@@ -419,7 +420,7 @@ nav{
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-block: 100px;
+    margin-bottom: 100px;
 }
 .all-products-container-body{
     direction: rtl;
@@ -428,7 +429,7 @@ nav{
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 }
 .all-products-container-header{
     display: flex;
@@ -445,6 +446,23 @@ nav{
     border-bottom-left-radius:30px;
     border-top-left-radius: 30px;
     min-height: calc(30px + clamp(var(--ssfont)));
+}
+.all-products-container-body a{
+    background-color: var(--bgclr);
+    color: var(--rareclr);
+    padding-block: 8px;
+    padding-inline: 45px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: clamp(var(--xfont));
+    font-family: "Vazir-Bold";
+    margin-top: 20px;
+    border: 2px solid var(--rareclr);
+    transition: all ease 0.5s;
+}
+.all-products-container-body a:hover{
+    background-color: var(--rareclr);
+    color: var(--bgclr);
 }
 .footer{
     width: 80%;
@@ -880,6 +898,13 @@ nav{
         width: 95%;
         margin-top: 100px;
         gap: 10px;
+    }
+    .all-products-container-body{
+        gap: 10px;
+    }
+    .all-products-container-body a{
+        padding-inline: 20px;
+        font-size: clamp(var(--font));
     }
     .footer{
         width: 95%;
